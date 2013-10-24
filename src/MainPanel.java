@@ -8,7 +8,8 @@ public class MainPanel extends JPanel{
 	private LoginPanel loginPanel;
 	public SwitchPanelsListener switchPanelsListener;
 
-
+	// Comment to show Git commit
+	
 	public MainPanel(int width, int height){
 		this.setSize(width, height);
 		this.setBackground(Color.white);
