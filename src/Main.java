@@ -7,6 +7,7 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		Window window = new Window(1000, 800);
+		
 	}
 
 }
