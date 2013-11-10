@@ -80,7 +80,18 @@ public class ClaimRegistrationPanel extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			 claimregistrationcontrol.checktype(priceofthecar.getText(),name.getText(),surname.getText(),comments.getText(),estimateddamages.getText());
-
+			 
+//			 if (client registered){
+//				 create claim
+//			 }
+//			 else (ask if create client){
+//				 if not -> abort operation 
+//				 if so -> create a new client (name, surname)
+//				 	   -> create claim and assign client to the claim
+//			 }
+			 
+			 
+			 
 		}
 		
 		
