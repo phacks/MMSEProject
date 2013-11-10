@@ -1,38 +1,42 @@
-//package test;
-//
-//import static org.junit.Assert.*;
-//
-//import org.junit.Before;
-//import org.junit.Test;
-//
-//import system.Login;
-//
-//public class LoginTest {
-//	
-//	Login login = new Login();
-//	
-//	@Before
-//	public void init() {
-//		
-//	}
-//
-//	@Test
-//	public void wrongUserTest() {
-//		assertTrue(login.checkCredentials("Albert", "az").equals("error"));
-//	}
-//	
-//	@Test
-//	public void EmployeeALoginTest() {
-//		assertTrue(login.checkCredentials("EmployeeA", "pwd").equals("EmployeeA"));
-//	}
-//	
-//	@Test
-//	public void EmployeeBLoginTest() {
-//		assertTrue(login.checkCredentials("EmployeeB", "pwd").equals("EmployeeB"));
-//	}
-//	
-//	@Test
-//	public void FinancialLoginTest() {
-//		assertTrue(login.checkCredentials("Financial", "pwd").equals("Financial"));
-//	}
-//}
+package test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import system.Login;
+
+public class LoginTest {
+	
+	Login login = new Login();
+	
+	@Before
+	public void init() {
+		
+	}
+
+	@Test
+	public void wrongUserTest() {
+		login.checkCredentials("Albert", "az");
+		assertTrue(login.getType().equals("error"));
+	}
+	
+	@Test
+	public void EmployeeALoginTest() {
+		login.checkCredentials("EmployeeA", "pwd");
+		assertTrue(login.getType().equals("EmployeeA"));
+	}
+	
+	@Test
+	public void EmployeeBLoginTest() {
+		login.checkCredentials("EmployeeB", "pwd");
+		assertTrue(login.getType().equals("EmployeeB"));
+	}
+	
+	@Test
+	public void FinancialLoginTest() {
+		login.checkCredentials("Financial", "pwd");
+		assertTrue(login.getType().equals("Financial"));
+	}
+}

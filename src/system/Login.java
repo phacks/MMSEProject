@@ -8,8 +8,9 @@ import java.util.Observable;
 
 public class Login extends Observable{
 	
+	String type;
+	
 	public void checkCredentials(String username, String password){
-		String type;
 		
 		if (username.equals("EmployeeA") && password.equals("pwd")){
 			type = "EmployeeA";
@@ -35,6 +36,10 @@ public class Login extends Observable{
 	public void setMainPanel(MainPanel mainPanel) {
 		// TODO Auto-generated method stub
 		super.addObserver(mainPanel);
+	}
+	
+	public String getType(){
+		return type;
 	}
 
 }
