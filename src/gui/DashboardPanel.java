@@ -41,8 +41,8 @@ public class DashboardPanel extends JPanel{
 	private void setMenu(String type) {
 		// TODO Auto-generated method stub
 		if (type.equals("EmployeeA")){
-			menu.addTab("Claim Evaluation", new JPanel());
-			menu.addTab("Claim Registration", new JPanel());
+			menu.addTab("Claim Evaluation", new ClaimEvaluationPanel());
+			menu.addTab("Claim Registration", new ClaimRegistrationPanel());
 			menu.addTab("Claim Decision", new JPanel());
 			menu.addTab("Decision Letter", new JPanel());
 			menu.addTab("Search Client", new JPanel());

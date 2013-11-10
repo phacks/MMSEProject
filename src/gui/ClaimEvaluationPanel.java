@@ -1,5 +1,7 @@
 package gui;
 
-public class ClaimEvaluationPanel {
+import javax.swing.JPanel;
+
+public class ClaimEvaluationPanel extends JPanel{
 
 }
