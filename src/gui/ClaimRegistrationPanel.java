@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import system.ClaimRegistrationControl;
+
 public class ClaimRegistrationPanel extends JPanel {
 	private JTextField name;
 	private JTextField surname;

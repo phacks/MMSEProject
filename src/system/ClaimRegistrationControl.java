@@ -1,10 +1,10 @@
-package gui;
+package system;
 
 import javax.swing.JOptionPane;
 
 public class ClaimRegistrationControl {
 	
-	ClaimRegistrationControl()
+	public ClaimRegistrationControl()
 	{
 	
 	}

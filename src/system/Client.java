@@ -8,7 +8,7 @@ public class Client {
 	
 	private String name;
 	private String surname;
-	private List<Claim> claimsList;
+	private ArrayList<Claim> claimsList = new ArrayList<Claim>();
 	public static List<Client> allClientsList = new ArrayList<Client>();
 	public static int counter = 0;
 	
@@ -23,8 +23,20 @@ public class Client {
 		this.claimsList.add(claim);
 	}
 	
-	public List<Claim> getClaimsList(){
+	public ArrayList<Claim> getClaimsList(){
 		return this.claimsList;
+	}
+	
+	public static ArrayList<Client> searchClient(String name){
+		Iterator<Client> it = allClientsList.iterator();
+		ArrayList<Client> clientsList = new ArrayList<Client>();
+		while (it.hasNext()){
+			Client client = it.next();
+			if (client.getName().equals(name)){
+				clientsList.add(client);
+			}
+		}
+		return clientsList;
 	}
 	
 	public static Client searchClient(String name, String surname){
@@ -39,12 +51,12 @@ public class Client {
 		return null;
 	}
 	
-	private String getSurname() {
+	public String getSurname() {
 		// TODO Auto-generated method stub
 		return surname;
 	}
 
-	private String getName() {
+	public String getName() {
 		// TODO Auto-generated method stub
 		return name;
 	}
