@@ -1,4 +1,4 @@
-package gui;
+package system;
 
 import javax.swing.JOptionPane;
 
@@ -8,7 +8,7 @@ import system.Client;
 
 public class ClaimRegistrationControl {
 	
-	ClaimRegistrationControl()
+	public ClaimRegistrationControl()
 	{
 	
 	}

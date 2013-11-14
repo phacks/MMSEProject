@@ -17,7 +17,7 @@ public class LoginPanel extends JPanel implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private MainPanel mainPanel;
 	private JButton checkButton = new JButton("Go to dashboard");
-	private JTextField username = new JTextField("user");
+	private JTextField username = new JTextField("EmployeeA");
 	private JPasswordField password = new JPasswordField("pwd");
 	private JLabel loginText = new JLabel("Login");
 	private JButton dashboardEmployeeAButton = new JButton();

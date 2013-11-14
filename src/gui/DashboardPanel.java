@@ -45,15 +45,13 @@ public class DashboardPanel extends JPanel{
 			menu.addTab("Claim Registration", new ClaimRegistrationPanel());
 			menu.addTab("Claim Decision", new JPanel());
 			menu.addTab("Decision Letter", new JPanel());
-			menu.addTab("Search Client", new JPanel());
-			menu.addTab("Search Claim", new JPanel());
+			menu.addTab("Search Client", new ClientSearchPanel());
 		}
 		if (type.equals("EmployeeB")){
 			menu.addTab("Claim Evaluation", new JPanel());
 			menu.addTab("Claim Registration", new JPanel());
 			menu.addTab("Decision Letter", new JPanel());
 			menu.addTab("Search Client", new JPanel());
-			menu.addTab("Search Claim", new JPanel());
 		}
 		if (type.equals("Financial")){
 			menu.addTab("Payment Order", new JPanel());
