@@ -1,16 +1,17 @@
 package system;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Claim {
-	
-	Client claimant;
-	private int priceOfCar;
-	private int estimatedDamages;
+// I changed the types in String	
+	private Client claimant;
+	private String priceOfCar;
+	private String estimatedDamages;
 	private String gravity;
-	public static ArrayList<Claim> allClaimsList = new ArrayList<Claim>();
+	public static List<Claim> allClaimsList=new ArrayList<Claim>();
 	
-	public Claim(Client claimant, int priceOfCar, int estimatedDamages, String gravity){
+	public Claim(Client claimant, String priceOfCar, String estimatedDamages, String gravity){
 		this.claimant = claimant;
 		this.setEstimatedDamages(estimatedDamages);
 		this.setGravity(gravity);

@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.naming.directory.SearchControls;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
@@ -14,7 +15,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import system.ClaimRegistrationControl;
+import system.Claim;
+import system.Client;
 
 public class ClaimRegistrationPanel extends JPanel {
 	private JTextField name;
@@ -23,9 +25,9 @@ public class ClaimRegistrationPanel extends JPanel {
 	private JTextField priceofthecar;
 	private JTextField estimateddamages;
 	private JButton createclaim;
-	private JCheckBox high;
-	private JCheckBox normal;
-	private JCheckBox low; 
+	public JCheckBox high;
+	public JCheckBox normal;
+	public JCheckBox low; 
 //	private JLabel gravity;
 	
 	
@@ -57,18 +59,10 @@ public class ClaimRegistrationPanel extends JPanel {
 	    add (normal);
 	    add (low);
 	    
-	    
-	    //-----------------Label-----------------------
-		//gravity= new JLabel("Gravity claim");
-		//add(gravity);
-	    
 		
 		
-		//-----------------------------------------------
-		
-		
-		thehandler handler= new thehandler();
-		createclaim.addActionListener(handler);
+		thehandler handler_= new thehandler();
+		createclaim.addActionListener(handler_);
 		
 	}
 	
@@ -76,27 +70,22 @@ public class ClaimRegistrationPanel extends JPanel {
 	
 	// method that handles the events
 	private  class thehandler implements ActionListener{
-		
 		ClaimRegistrationControl claimregistrationcontrol = new ClaimRegistrationControl();
-		
+		boolean h,n;
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			 claimregistrationcontrol.checktype(priceofthecar.getText(),name.getText(),surname.getText(),comments.getText(),estimateddamages.getText());
+			if( claimregistrationcontrol.checktype(priceofthecar.getText(),name.getText(),surname.getText(),comments.getText(),estimateddamages.getText()) )
+			{
+				h=high.isSelected();
+				n=normal.isSelected();
+	
+				claimregistrationcontrol.clienthandling(h,n,priceofthecar.getText(),name.getText(),surname.getText(),comments.getText(),estimateddamages.getText());
 			 
-//			 if (client registered){
-//				 create claim
-//			 }
-//			 else (ask if create client){
-//				 if not -> abort operation 
-//				 if so -> create a new client (name, surname)
-//				 	   -> create claim and assign client to the claim
-//			 }
-			 
-			 
-			 
-		}
+			 }
+				 
+			}
 		
 		
 	}
 }
-		
+	

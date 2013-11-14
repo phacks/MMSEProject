@@ -8,19 +8,32 @@ public class Client {
 	
 	private String name;
 	private String surname;
-	private ArrayList<Claim> claimsList = new ArrayList<Claim>();
+	private static List<Claim> claimsList = new ArrayList<Claim>();
 	public static List<Client> allClientsList = new ArrayList<Client>();
 	public static int counter = 0;
 	
-	public Client(String name, String surname){
+
+
+	
+
+
+	public Client(String name, String surname) {
+		// TODO Auto-generated constructor stub
 		this.name = name;
 		this.surname = surname;
 		allClientsList.add(this);
 	}
 
 
-	public void addClaim(Claim claim){
-		this.claimsList.add(claim);
+
+
+
+
+
+
+
+	public  void addClaim(Claim claim){ // I added static and removed this
+		claimsList.add(claim);
 	}
 	
 	public ArrayList<Claim> getClaimsList(){
