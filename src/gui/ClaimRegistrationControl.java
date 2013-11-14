@@ -41,7 +41,7 @@ public class ClaimRegistrationControl {
 				client.addClaim(claim);
 			}
 		
-			JOptionPane.showMessageDialog(null,"Claim registered"+" "+"for"+name+" "+surname);
+			JOptionPane.showMessageDialog(null,"Claim registered"+" "+"for"+name+" " +surname);
 		}
 		else
 	
