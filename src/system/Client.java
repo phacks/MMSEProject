@@ -8,8 +8,8 @@ public class Client {
 	
 	private String name;
 	private String surname;
-	private static List<Claim> claimsList = new ArrayList<Claim>();
-	public static List<Client> allClientsList = new ArrayList<Client>();
+	private ArrayList<Claim> claimsList = new ArrayList<Claim>();
+	public static ArrayList<Client> allClientsList = new ArrayList<Client>();
 	public static int counter = 0;
 	
 
@@ -32,7 +32,7 @@ public class Client {
 
 
 
-	public  void addClaim(Claim claim){ // I added static and removed this
+	public void addClaim(Claim claim){ // I added static and removed this
 		claimsList.add(claim);
 	}
 	

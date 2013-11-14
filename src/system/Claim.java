@@ -19,20 +19,20 @@ public class Claim {
 		allClaimsList.add(this);
 	}
 
-	public int getPriceOfCar() {
+	public String getPriceOfCar() {
 		return priceOfCar;
 	}
 
-	public void setPriceOfCar(int priceOfCar) {
+	public void setPriceOfCar(String priceOfCar) {
 		this.priceOfCar = priceOfCar;
 	}
 
-	public int getEstimatedDamages() {
+	public String getEstimatedDamages() {
 		return estimatedDamages;
 	}
 
-	public void setEstimatedDamages(int estimatedDamages) {
-		this.estimatedDamages = estimatedDamages;
+	public void setEstimatedDamages(String estimatedDamages2) {
+		this.estimatedDamages = estimatedDamages2;
 	}
 
 	public String getGravity() {

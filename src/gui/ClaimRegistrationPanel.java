@@ -1,22 +1,15 @@
 package gui;
 
 
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.naming.directory.SearchControls;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import system.Claim;
-import system.Client;
+import system.ClaimRegistrationControl;
 
 public class ClaimRegistrationPanel extends JPanel {
 	private JTextField name;
