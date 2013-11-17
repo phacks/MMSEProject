@@ -11,6 +11,7 @@ public class Client {
 	private ArrayList<Claim> claimsList = new ArrayList<Claim>();
 	public static ArrayList<Client> allClientsList = new ArrayList<Client>();
 	public static int counter = 0;
+	//private String insuranceType;
 	
 
 
