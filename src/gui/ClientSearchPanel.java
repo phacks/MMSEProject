@@ -118,18 +118,7 @@ public class ClientSearchPanel extends JPanel implements ActionListener {
 
 	private JPanel createClaimPanel(Claim claim) {
 		// TODO Auto-generated method stub
-		JPanel claimPanel = new JPanel();
-		claimPanel.setMaximumSize(new Dimension(800, 100));
-
-		JLabel estimatedDamages = new JLabel("Estimated damages : " + claim.getEstimatedDamages()+ " | ");
-		JLabel priceOfCar = new JLabel("Price of the car : " + claim.getPriceOfCar() + " | ");
-		JLabel gravity = new JLabel("Gravity : " + claim.getGravity()+ " | ");
-		JLabel estimation = new JLabel("Estimation : " + claim.evaluateSeverity());
-
-		claimPanel.add(estimatedDamages);
-		claimPanel.add(priceOfCar);
-		claimPanel.add(gravity);
-		claimPanel.add(estimation);
+		JPanel claimPanel = new ClaimPanel(claim);
 
 		return claimPanel;
 	}
