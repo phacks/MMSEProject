@@ -42,12 +42,14 @@ public class DashboardPanel extends JPanel{
 		// TODO Auto-generated method stub
 		if (type.equals("EmployeeA")){
 			menu.addTab("Claim Registration", new ClaimRegistrationPanel());
-			menu.addTab("Claim Decision", new JPanel());
+			menu.addTab("Claim Processing", new ClaimProcessingPanel());
+			menu.addTab("Claim Decision", new ClaimDecisionPanel());
 			menu.addTab("Decision Letter", new JPanel());
 			menu.addTab("Search Client", new ClientSearchPanel());
 		}
 		if (type.equals("EmployeeB")){
 			menu.addTab("Claim Registration", new JPanel());
+			menu.addTab("Claim Processing", new ClaimProcessingPanel());
 			menu.addTab("Decision Letter", new JPanel());
 			menu.addTab("Search Client", new JPanel());
 		}

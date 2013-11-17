@@ -11,6 +11,7 @@ public class Claim {
 	private String gravity;
 	private String severity;
 	private String decision = "";
+	private boolean processed = false;
 	private boolean letterSent = false;
 	public static List<Claim> allClaimsList=new ArrayList<Claim>();
 	
@@ -85,6 +86,30 @@ public class Claim {
 
 	public void setSeverity(String severity) {
 		this.severity = severity;
+	}
+
+	public boolean isProcessed() {
+		return processed;
+	}
+
+	public void setProcessed(boolean processed) {
+		this.processed = processed;
+	}
+
+	public boolean isLetterSent() {
+		return letterSent;
+	}
+
+	public void setLetterSent(boolean letterSent) {
+		this.letterSent = letterSent;
+	}
+
+	public String getDecision() {
+		return decision;
+	}
+
+	public void setDecision(String decision) {
+		this.decision = decision;
 	}
 	
 }
