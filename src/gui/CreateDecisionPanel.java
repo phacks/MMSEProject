@@ -7,11 +7,15 @@ import java.awt.event.ActionListener;
 
 
 
+
+
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import system.Client;
@@ -19,8 +23,10 @@ import system.Client;
 public class CreateDecisionPanel extends JPanel 
 {
 	private JLabel decision;
-	private JCheckBox create;
-	private JCheckBox nocreate;
+	//private JCheckBox create;
+	//private JCheckBox nocreate;
+	JRadioButton create   = new JRadioButton("Create"  , true);
+	JRadioButton No    = new JRadioButton("Don't create"   , false);
 	private JLabel question;
 	private JButton submit;
 	private String name;
@@ -29,12 +35,15 @@ public class CreateDecisionPanel extends JPanel
 	CreateDecisionPanel(String text1, String text2)
 	{
 		setVisible(true);
+		
+		ButtonGroup bgroup = new ButtonGroup();
+		bgroup.add(create);
+		bgroup.add(No);
+		add(create);
+		add(No);
 		question = new JLabel( text1 +" " +text2 +" "+"is not registrated as a client: Do you want to register him?");
 		add(question);
-		create = new JCheckBox ("Create",true);
-	    nocreate = new JCheckBox ("Don't create");
-	    add(create);
-	    add(nocreate);
+		
 		submit = new JButton("Submit");
 		add(submit);
 		name=text1;
@@ -62,6 +71,7 @@ public class CreateDecisionPanel extends JPanel
 				JOptionPane.showMessageDialog(null, "Operation Aborted");
 		
 			setVisible(false);
+			
 		}
 		
 		

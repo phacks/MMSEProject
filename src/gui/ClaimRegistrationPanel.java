@@ -4,9 +4,11 @@ package gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import system.ClaimRegistrationControl;
@@ -18,10 +20,10 @@ public class ClaimRegistrationPanel extends JPanel {
 	private JTextField priceofthecar;
 	private JTextField estimateddamages;
 	private JButton createclaim;
-	public JCheckBox high;
-	public JCheckBox normal;
-	public JCheckBox low; 
-//	private JLabel gravity;
+	public JRadioButton high = new JRadioButton ("High",false);;
+	public JRadioButton normal = new JRadioButton ("Normal", true);;
+	public JRadioButton low= new JRadioButton("low"  , false);;  
+
 	
 	
 
@@ -29,6 +31,11 @@ public class ClaimRegistrationPanel extends JPanel {
 	
 	public ClaimRegistrationPanel()
 	{
+		ButtonGroup bgroup = new ButtonGroup();
+		bgroup.add(high);
+		bgroup.add(normal);
+		bgroup.add(low);
+		
 		//------------text field-----------------
 		name = new JTextField("Name",20);
 		add(name);
@@ -44,9 +51,7 @@ public class ClaimRegistrationPanel extends JPanel {
 		createclaim = new JButton("Create Claim");
 		add(createclaim);
 		//---------------check boxes----------------------
-		high = new JCheckBox ("High");
-	    normal = new JCheckBox ("Normal", true);
-	    low = new JCheckBox ("Low");
+	
 	    
 	    add (high);
 	    add (normal);

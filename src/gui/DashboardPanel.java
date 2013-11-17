@@ -44,7 +44,7 @@ public class DashboardPanel extends JPanel{
 			menu.addTab("Claim Evaluation", new ClaimEvaluationPanel());
 			menu.addTab("Claim Registration", new ClaimRegistrationPanel());
 			menu.addTab("Claim Decision", new JPanel());
-			menu.addTab("Decision Letter", new JPanel());
+			menu.addTab("Decision Letter", new DecisionLetterPanel());
 			menu.addTab("Search Client", new ClientSearchPanel());
 		}
 		if (type.equals("EmployeeB")){

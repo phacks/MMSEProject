@@ -1,5 +1,7 @@
 package system;
 
+import gui.DecisionFrame;
+
 import javax.swing.JOptionPane;
 
 import system.Claim;
