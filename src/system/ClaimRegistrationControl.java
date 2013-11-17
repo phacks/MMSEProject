@@ -4,9 +4,6 @@ import gui.DecisionFrame;
 
 import javax.swing.JOptionPane;
 
-import system.Claim;
-import system.Client;
-
 
 public class ClaimRegistrationControl {
 	
@@ -27,20 +24,17 @@ public class ClaimRegistrationControl {
 			{
 				
 				Claim claim=new	Claim(client,price,estimateddamages,"high");
-				client.addClaim(claim);
 				
 			}
 			else if (n)
 			{
 				Claim claim=new	Claim(client,price,estimateddamages,"normal");
-				client.addClaim(claim);
 				
 				
 			}
 			else
 			{
 				Claim claim=new	Claim(client,price,estimateddamages,"low");
-				client.addClaim(claim);
 			}
 		
 			JOptionPane.showMessageDialog(null,"Claim registered"+" "+"for"+name+" " +surname);

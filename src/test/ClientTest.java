@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import system.Claim;
 import system.Client;
 
 public class ClientTest {
@@ -24,6 +25,14 @@ public class ClientTest {
 	@Test
 	public void searchNonExistingClient(){
 		assertTrue(Client.searchClient("Edgar", "Poe") == null);
+	}
+	
+	@Test
+	public void searchClientsClaim(){
+		Client client3 = new Client("Rocky", "Balboa");
+		Claim claim = new Claim(client3, "10000", "10000", "Normal");
+		client3.addClaim(claim);
+		assertTrue(Client.searchClient("Rocky", "Balboa").getClaimsList().get(0).equals(claim));
 	}
 
 }
