@@ -30,12 +30,12 @@ public class ClientSearchPanel extends JPanel implements ActionListener {
 	public ClientSearchPanel(){
 
 		// Creation of fake clients accounts, for the purpose of GUI tests
-		Client marion = new Client("Samama", "Marion");
-		new Claim(marion, "10000", "2000", "high");
-		new Claim(marion, "10000", "2000", "low");
-
-		Client celine = new Client("Samama", "Céline");
-		new Claim(celine, "10000", "2000", "normal");
+//		Client marion = new Client("Samama", "Marion");
+//		new Claim(marion, "10000", "2000", "high");
+//		new Claim(marion, "10000", "2000", "low");
+//
+//		Client celine = new Client("Samama", "Céline");
+//		new Claim(celine, "10000", "2000", "normal");
 
 
 

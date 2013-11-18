@@ -43,9 +43,9 @@ public class ClaimRegistrationPanel extends JPanel {
 		add(surname);
 		comments = new JTextField("Comments",20);
 		add(comments);
-		priceofthecar = new JTextField("Price of the car",20);
+		priceofthecar = new JTextField("10000",20);
 		add(priceofthecar);
-		estimateddamages = new JTextField("Estimated damages",20);
+		estimateddamages = new JTextField("1000",20);
 		add(estimateddamages);
 		//-----------------button-----------------
 		createclaim = new JButton("Create Claim");

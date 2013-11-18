@@ -11,17 +11,18 @@ public class Client {
 	private ArrayList<Claim> claimsList = new ArrayList<Claim>();
 	public static ArrayList<Client> allClientsList = new ArrayList<Client>();
 	public static int counter = 0;
-	//private String insuranceType;
+	private String insuranceType;
 	
 
 
 	
 
 
-	public Client(String name, String surname) {
+	public Client(String name, String surname, String insuranceType) {
 		// TODO Auto-generated constructor stub
 		this.name = name;
 		this.surname = surname;
+		this.setInsuranceType(insuranceType);
 		allClientsList.add(this);
 	}
 
@@ -73,6 +74,30 @@ public class Client {
 	public String getName() {
 		// TODO Auto-generated method stub
 		return name;
+	}
+
+
+
+
+
+
+
+
+
+	public String getInsuranceType() {
+		return insuranceType;
+	}
+
+
+
+
+
+
+
+
+
+	public void setInsuranceType(String insuranceType) {
+		this.insuranceType = insuranceType;
 	}
 	
 }

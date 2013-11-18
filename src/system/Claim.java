@@ -11,12 +11,17 @@ public class Claim {
 	private String gravity;
 	private String severity;
 	private String decision = "";
+	private String date;
+	private String licensePlate;
+	private String DriversLicenseNumber;
+	private boolean otherVehiclesInvolved;
+	private boolean formFilled = false;
 	private boolean processed = false;
 	private boolean letterSent = false;
 	public static List<Claim> allClaimsList=new ArrayList<Claim>();
 	
 	public Claim(Client claimant, String priceOfCar, String estimatedDamages, String gravity){
-		this.claimant = claimant;
+		this.setClaimant(claimant);
 		this.setEstimatedDamages(estimatedDamages);
 		this.setGravity(gravity);
 		this.setPriceOfCar(priceOfCar);
@@ -57,7 +62,7 @@ public class Claim {
 		// If >= 0.5, complex claim
 		// If < 0.5, simple claim
 		
-		int previousAccidents = this.claimant.getClaimsList().size() - 1;
+		int previousAccidents = this.getClaimant().getClaimsList().size() - 1;
 		double personalOpinion = 0.0;
 		if (gravity.equals("high")){
 			personalOpinion = 0.30;
@@ -110,6 +115,54 @@ public class Claim {
 
 	public void setDecision(String decision) {
 		this.decision = decision;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getLicensePlate() {
+		return licensePlate;
+	}
+
+	public void setLicensePlate(String licensePlate) {
+		this.licensePlate = licensePlate;
+	}
+
+	public String getDriversLicenseNumber() {
+		return DriversLicenseNumber;
+	}
+
+	public void setDriversLicenseNumber(String driversLicenseNumber) {
+		DriversLicenseNumber = driversLicenseNumber;
+	}
+
+	public boolean isOtherVehiclesInvolved() {
+		return otherVehiclesInvolved;
+	}
+
+	public void setOtherVehiclesInvolved(boolean otherVehiclesInvolved) {
+		this.otherVehiclesInvolved = otherVehiclesInvolved;
+	}
+
+	public boolean isFormFilled() {
+		return formFilled;
+	}
+
+	public void setFormFilled(boolean formFilled) {
+		this.formFilled = formFilled;
+	}
+
+	public Client getClaimant() {
+		return claimant;
+	}
+
+	public void setClaimant(Client claimant) {
+		this.claimant = claimant;
 	}
 	
 }
