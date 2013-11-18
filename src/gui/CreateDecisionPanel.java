@@ -33,11 +33,13 @@ public class CreateDecisionPanel extends JPanel implements ActionListener
 	private String name;
 	private String surname;
 	private JLabel horizontalSpace = new JLabel(" ");
+	private DecisionFrame frame;
 
-	CreateDecisionPanel(String text1, String text2)
+	CreateDecisionPanel(String text1, String text2, DecisionFrame frame)
 	{
 		setVisible(true);
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		this.frame = frame;
 
 		question = new JLabel( text1 +" " +text2 +" "+"is not registrated as a client: do you want to register him?");
 		add(question);
@@ -90,8 +92,10 @@ public class CreateDecisionPanel extends JPanel implements ActionListener
 					Client client= new Client(name,surname,"expensive");
 				}
 				JOptionPane.showMessageDialog(null, "The client is  now inserted: You can fill the claim form");
-
-
+				
+				frame.dispose();
+			
+				
 
 			}
 			else

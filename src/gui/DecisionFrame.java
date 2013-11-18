@@ -18,7 +18,7 @@ import javax.swing.JFrame;
 			setLayout(flo);
 			
 			//  instance of the panel
-			CreateDecisionPanel createdecisionpanel= new CreateDecisionPanel(name,surname);
+			CreateDecisionPanel createdecisionpanel= new CreateDecisionPanel(name,surname, this);
 			add(createdecisionpanel);
 			
 			

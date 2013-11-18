@@ -11,13 +11,22 @@ import system.Claim;
 public class ClaimPanel extends JPanel {
 	
 	public ClaimPanel(Claim claim){
-	this.setMaximumSize(new Dimension(800, 150));
+	this.setMaximumSize(new Dimension(800, 160));
 	
+	JPanel claimStatusPanel = new JPanel();
 	JPanel top = new JPanel();
 	JPanel bottom = new JPanel();
 	
 	this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+	
+	JLabel claimStatus = new JLabel("Claim status : " + claim.getStatus() + " | ");
+	JLabel insurance = new JLabel("Claimant's insurance type : " + claim.getClaimant().getInsuranceType());
+	
+	claimStatusPanel.add(claimStatus);
+	claimStatusPanel.add(insurance);
 
+	this.add(claimStatusPanel);
+	
 	JLabel estimatedDamages = new JLabel("Estimated damages : " + claim.getEstimatedDamages()+ " | ");
 	JLabel priceOfCar = new JLabel("Price of the car : " + claim.getPriceOfCar() + " | ");
 	JLabel gravity = new JLabel("Gravity : " + claim.getGravity()+ " | ");
@@ -27,6 +36,7 @@ public class ClaimPanel extends JPanel {
 	top.add(priceOfCar);
 	top.add(gravity);
 	top.add(estimation);
+	
 	
 	this.add(top);
 	
@@ -44,6 +54,8 @@ public class ClaimPanel extends JPanel {
 		
 		this.add(bottom);
 	}
+	
+	
 	
 	
 	}

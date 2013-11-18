@@ -10,7 +10,7 @@ public class Claim {
 	private String estimatedDamages;
 	private String gravity;
 	private String severity;
-	private String decision = "";
+	private String decision;
 	private String date;
 	private String licensePlate;
 	private String DriversLicenseNumber;
@@ -18,6 +18,7 @@ public class Claim {
 	private boolean formFilled = false;
 	private boolean processed = false;
 	private boolean letterSent = false;
+	private String status = "received";
 	public static List<Claim> allClaimsList=new ArrayList<Claim>();
 	
 	public Claim(Client claimant, String priceOfCar, String estimatedDamages, String gravity){
@@ -99,6 +100,7 @@ public class Claim {
 
 	public void setProcessed(boolean processed) {
 		this.processed = processed;
+		this.status = "processed";
 	}
 
 	public boolean isLetterSent() {
@@ -115,6 +117,7 @@ public class Claim {
 
 	public void setDecision(String decision) {
 		this.decision = decision;
+		this.status = decision;
 	}
 
 	public String getDate() {
@@ -163,6 +166,11 @@ public class Claim {
 
 	public void setClaimant(Client claimant) {
 		this.claimant = claimant;
+	}
+
+	public String getStatus() {
+		// TODO Auto-generated method stub
+		return status;
 	}
 	
 }

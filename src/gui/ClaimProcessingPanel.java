@@ -28,7 +28,6 @@ public class ClaimProcessingPanel extends JPanel implements ActionListener{
 	private boolean insuranceOK = false;
 	private boolean historyOK = false;
 	private boolean garageOK = false;
-	private boolean damageOK = false;
 	private Claim claim;
 	private ClaimPanel claimPanel;
 
@@ -122,8 +121,7 @@ public class ClaimProcessingPanel extends JPanel implements ActionListener{
 
 	private void checkCompleteness() {
 		if(formOK && historyOK && insuranceOK && garageOK){
-			System.out.println("cleckCompleteness");
-			if(claim.getDecision().equals("NotOK")){
+			if(claim.getDecision() != null){
 				JOptionPane.showMessageDialog(null, "The claim has been processed, the decision is NotOK. The decision letter can be sent.");
 			}
 			else{
