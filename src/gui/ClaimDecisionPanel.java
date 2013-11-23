@@ -46,6 +46,7 @@ public class ClaimDecisionPanel extends JPanel implements ActionListener {
 				JOptionPane.showMessageDialog(null, "The decision is OK. The decision letter can be sent.");
 				this.removeAll();
 				this.add(checkForClaimsButton);
+				dashboard.refreshNotifications();
 				this.repaint();
 				this.revalidate();
 			}
@@ -89,7 +90,7 @@ public class ClaimDecisionPanel extends JPanel implements ActionListener {
 
 	}
 
-	private Claim pickClaim() {
+	public static Claim pickClaim() {
 		Claim claim;
 		Iterator<Claim> it = Claim.allClaimsList.iterator();
 		while(it.hasNext()){

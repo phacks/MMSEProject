@@ -97,7 +97,7 @@ public class DashboardPanel extends JPanel{
 		Iterator<Claim> it = Claim.allClaimsList.iterator();
 		while(it.hasNext()){
 			claim = it.next();
-			if( claim.isProcessed() && (!(claim.getDecision() == null)) && ! claim.isLetterSent()){
+			if( claim.isProcessed() && (claim.getDecision() != null) && ! claim.isLetterSent()){
 				c++;
 			}
 		}

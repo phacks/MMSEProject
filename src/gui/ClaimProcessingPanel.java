@@ -76,7 +76,7 @@ public class ClaimProcessingPanel extends JPanel implements ActionListener{
 
 	}
 
-	private Claim pickClaim(){
+	public static Claim pickClaim(){
 		Claim claim;
 		Iterator<Claim> it = Claim.allClaimsList.iterator();
 		while(it.hasNext()){

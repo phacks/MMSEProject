@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 		
 		public DecisionFrame(String name, String surname) 
 		{
-			
+			this.setLocationRelativeTo(null);
 			setSize(700, 300);
 			
 			
@@ -24,7 +24,7 @@ import javax.swing.JFrame;
 			
 			
 			
-			
+			this.setContentPane(createdecisionpanel);
 			setVisible(true);
 			
 		}
