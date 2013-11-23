@@ -22,10 +22,11 @@ public class DecisionLetterPanel extends JPanel {
 	private JTextField email;
 	private JButton send;
 	private JPanel bottomPanel = new JPanel();
+	private DashboardPanel dashboard;
 
-	public DecisionLetterPanel()
+	public DecisionLetterPanel(DashboardPanel dashboardPanel)
 	{
-		
+		this.dashboard = dashboardPanel;
 		this.setLayout(new BorderLayout());
 		email = new JTextField("email@domain.se",20);
 		send = new JButton("Send");

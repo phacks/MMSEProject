@@ -21,8 +21,10 @@ public class ClaimDecisionPanel extends JPanel implements ActionListener {
 	private JPanel buttonPanel = new JPanel();
 	private JButton ok = new JButton("OK");
 	private JButton notOk = new JButton("Not OK");
+	private DashboardPanel dashboard;
 
-	public ClaimDecisionPanel(){
+	public ClaimDecisionPanel(DashboardPanel dashboardPanel){
+		this.dashboard = dashboardPanel;
 				
 		this.setAlignmentX(CENTER_ALIGNMENT);
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
@@ -55,6 +57,7 @@ public class ClaimDecisionPanel extends JPanel implements ActionListener {
 				JOptionPane.showMessageDialog(null, "The decision is NotOK. The decision letter can be sent.");
 				this.removeAll();
 				this.add(checkForClaimsButton);
+				dashboard.refreshNotifications();
 				this.repaint();
 				this.revalidate();
 			}

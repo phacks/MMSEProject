@@ -20,21 +20,20 @@ public class ClaimRegistrationPanel extends JPanel {
 	private JTextField priceofthecar;
 	private JTextField estimateddamages;
 	private JButton createclaim;
-	public JRadioButton high = new JRadioButton ("High",false);;
-	public JRadioButton normal = new JRadioButton ("Normal", true);;
-	public JRadioButton low= new JRadioButton("low"  , false);;  
-
+	public JRadioButton high = new JRadioButton ("High",false);
+	public JRadioButton normal = new JRadioButton ("Normal", true);
+	public JRadioButton low= new JRadioButton("low"  , false);
+	private DashboardPanel dashboard;
+	private JPanel panel;
 	
-	
-
-
-	
-	public ClaimRegistrationPanel()
-	{
+		
+	public ClaimRegistrationPanel(DashboardPanel dashboardPanel) {
 		ButtonGroup bgroup = new ButtonGroup();
+		panel = this;
 		bgroup.add(high);
 		bgroup.add(normal);
 		bgroup.add(low);
+		this.dashboard = dashboardPanel;
 		
 		//------------text field-----------------
 		name = new JTextField("Name",20);
@@ -63,12 +62,12 @@ public class ClaimRegistrationPanel extends JPanel {
 		createclaim.addActionListener(handler_);
 		
 	}
-	
-	
-	
+
+
+
 	// method that handles the events
 	private  class thehandler implements ActionListener{
-		ClaimRegistrationControl claimregistrationcontrol = new ClaimRegistrationControl();
+		ClaimRegistrationControl claimregistrationcontrol = new ClaimRegistrationControl(dashboard);
 		boolean h,n;
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
@@ -78,7 +77,8 @@ public class ClaimRegistrationPanel extends JPanel {
 				n=normal.isSelected();
 	
 				claimregistrationcontrol.clienthandling(h,n,priceofthecar.getText(),name.getText(),surname.getText(),comments.getText(),estimateddamages.getText());
-			 
+				panel.repaint();
+				panel.revalidate();
 			 }
 				 
 			}

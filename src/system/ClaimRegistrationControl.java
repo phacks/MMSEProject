@@ -1,15 +1,17 @@
 package system;
 
+import gui.DashboardPanel;
 import gui.DecisionFrame;
 
 import javax.swing.JOptionPane;
 
 
 public class ClaimRegistrationControl {
+	private DashboardPanel dashboard;
 	
-	public ClaimRegistrationControl()
+	public ClaimRegistrationControl(DashboardPanel dashboard)
 	{
-	
+		this.dashboard = dashboard;
 	}
 	
 	
@@ -38,6 +40,7 @@ public class ClaimRegistrationControl {
 			}
 		
 			JOptionPane.showMessageDialog(null,"Claim registered"+" "+"for"+name+" " +surname);
+			dashboard.refreshNotifications();
 		}
 		else
 	

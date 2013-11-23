@@ -26,16 +26,18 @@ public class ClientSearchPanel extends JPanel implements ActionListener {
 	private JButton submit = new JButton("Search");
 	private JPanel searchPanel = new JPanel();
 	private JPanel resultsPanel = new JPanel();
+	private JButton searchAllClaims = new JButton("Display all claims");
+	private JButton searchAllClients = new JButton("Display all clients");
 
 	public ClientSearchPanel(){
 
 		// Creation of fake clients accounts, for the purpose of GUI tests
-//		Client marion = new Client("Samama", "Marion");
-//		new Claim(marion, "10000", "2000", "high");
-//		new Claim(marion, "10000", "2000", "low");
-//
-//		Client celine = new Client("Samama", "Céline");
-//		new Claim(celine, "10000", "2000", "normal");
+		//		Client marion = new Client("Samama", "Marion");
+		//		new Claim(marion, "10000", "2000", "high");
+		//		new Claim(marion, "10000", "2000", "low");
+		//
+		//		Client celine = new Client("Samama", "Céline");
+		//		new Claim(celine, "10000", "2000", "normal");
 
 
 
@@ -45,7 +47,13 @@ public class ClientSearchPanel extends JPanel implements ActionListener {
 		searchPanel.add(surname);
 		searchPanel.add(submit);
 		this.submit.addActionListener(this);
+		searchAllClaims.addActionListener(this);
+		searchPanel.add(searchAllClaims);
+		searchAllClients.addActionListener(this);
+		searchPanel.add(searchAllClients);
 		this.add(searchPanel);
+
+		
 
 		resultsPanel.setLayout(new BoxLayout(resultsPanel, BoxLayout.PAGE_AXIS));
 
@@ -84,6 +92,40 @@ public class ClientSearchPanel extends JPanel implements ActionListener {
 				}
 			}
 
+			resultsPanel.repaint();
+			resultsPanel.revalidate();
+		}
+
+		if(arg0.getSource() == searchAllClaims){
+			resultsPanel.removeAll();
+			Iterator<Claim> it = Claim.allClaimsList.iterator();
+			if(Claim.allClaimsList.size() == 0){
+				resultsPanel.add(noResultsLabel);
+			}
+			else{
+				Claim claim;
+				while(it.hasNext()){
+					claim = it.next();
+					resultsPanel.add(createClaimPanel(claim));
+				}
+			}
+			resultsPanel.repaint();
+			resultsPanel.revalidate();
+		}
+		
+		if(arg0.getSource() == searchAllClients){
+			resultsPanel.removeAll();
+			Iterator<Client> it = Client.allClientsList.iterator();
+			if(Client.allClientsList.size() == 0){
+				resultsPanel.add(noResultsLabel);
+			}
+			else{
+				Client client;
+				while(it.hasNext()){
+					client = it.next();
+					resultsPanel.add(createClientPanel(client));
+				}
+			}
 			resultsPanel.repaint();
 			resultsPanel.revalidate();
 		}

@@ -30,9 +30,11 @@ public class ClaimProcessingPanel extends JPanel implements ActionListener{
 	private boolean garageOK = false;
 	private Claim claim;
 	private ClaimPanel claimPanel;
+	private DashboardPanel dashboard;
 
-	public ClaimProcessingPanel(){
+	public ClaimProcessingPanel(DashboardPanel dashboardPanel){
 		this.setAlignmentX(CENTER_ALIGNMENT);
+		this.dashboard = dashboardPanel;
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 
 		this.add(checkForClaimsButton);
@@ -134,6 +136,7 @@ public class ClaimProcessingPanel extends JPanel implements ActionListener{
 			garageOK = false;
 			this.removeAll();
 			this.add(checkForClaimsButton);
+			dashboard.refreshNotifications();
 			this.repaint();
 			this.revalidate();
 		}
