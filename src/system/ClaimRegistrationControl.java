@@ -6,85 +6,54 @@ import javax.swing.JOptionPane;
 
 
 public class ClaimRegistrationControl {
-	
+
 	public ClaimRegistrationControl()
 	{
-	
 	}
-	
-	
-	
-	
-	public void clienthandling(boolean h,boolean n,String price, String name, String surname, String comments, String estimateddamages){
+	public void clientHandling(boolean h,boolean n,String price, String name, String surname, String comments, String estimatedDamages){
 		Client client;
 		client=Client.searchClient(name,surname);
 		if ( client != null){
-			
 			if(h)
 			{
-				
-				Claim claim=new	Claim(client,price,estimateddamages,"high");
-				
+				Claim claim=new	Claim(client,price,estimatedDamages,"high");
 			}
 			else if (n)
 			{
-				Claim claim=new	Claim(client,price,estimateddamages,"normal");
-				
-				
+				Claim claim=new	Claim(client,price,estimatedDamages,"normal");
 			}
 			else
 			{
-				Claim claim=new	Claim(client,price,estimateddamages,"low");
+				Claim claim=new	Claim(client,price,estimatedDamages,"low");
 			}
-		
+
 			JOptionPane.showMessageDialog(null,"Claim registered"+" "+"for"+name+" " +surname);
 		}
 		else
-	
-			
-			 createdecision(name,surname);
-			 
-		
-		
+			createDecision(name,surname);
 	}
-	
-	
-	public boolean checkinteger( String imput ) {
-	    try {
-	        Integer.parseInt(imput );
-	        return true;
-	    }
-	    catch( Exception e ) {
-	        return false;
-	    }
-	
-	
-    }
-
-	public boolean checktype(String text, String text2, String text3, String text4, String text5) {
-		// TODO Auto-generated method stub
-		if( checkinteger(text) && !checkinteger(text2)  && !checkinteger(text3) && !checkinteger(text4) && checkinteger(text5)  )
+	public boolean checkInteger( String imput ) {
+		try {
+			Integer.parseInt(imput );
+			return true;
+		}
+		catch( Exception e ) {
+			return false;
+		}
+	}
+	public boolean checkType(String text, String text2, String text3, String text4, String text5) {
+		if( checkInteger(text) && !checkInteger(text2)  && !checkInteger(text3) && !checkInteger(text4) && checkInteger(text5)  )
 		{
 			return true;
-			
-			
 		}
 		else
 		{
 			JOptionPane.showMessageDialog(null, "Wrong parameter inserted!!! Try again");
 			return false;
 		}
-		
-		
 	}
-	
-	public void createdecision(String name,String surname)
+	public void createDecision(String name,String surname)
 	{
-		DecisionFrame decisionframe= new DecisionFrame(name,surname);
-
+		DecisionFrame decisionFrame= new DecisionFrame(name,surname);
 	}
-	
-	
-
-
-}// end class
+}

@@ -112,4 +112,8 @@ public class Claim {
 		this.decision = decision;
 	}
 	
+	public Client getClient() {
+		return claimant;
+	}
+	
 }
