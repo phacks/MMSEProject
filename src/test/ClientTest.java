@@ -11,14 +11,14 @@ public class ClientTest {
 
 	@Test
 	public void newClient(){
-		Client client = new Client("john", "doe");
+		Client client = new Client("john", "doe", "normal");
 		assertTrue(Client.allClientsList != null);
 		
 	}
 	
 	@Test
 	public void searchExistingClient(){
-		Client client2 = new Client("Jane", "Doe");
+		Client client2 = new Client("Jane", "Doe", "normal");
 		assertTrue((Client.searchClient("Jane", "Doe")).equals(client2));
 	}
 	
@@ -29,7 +29,7 @@ public class ClientTest {
 	
 	@Test
 	public void searchClientsClaim(){
-		Client client3 = new Client("Rocky", "Balboa");
+		Client client3 = new Client("Rocky", "Balboa", "normal");
 		Claim claim = new Claim(client3, "10000", "10000", "Normal");
 		client3.addClaim(claim);
 		assertTrue(Client.searchClient("Rocky", "Balboa").getClaimsList().get(0).equals(claim));

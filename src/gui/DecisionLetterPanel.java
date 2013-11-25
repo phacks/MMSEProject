@@ -3,11 +3,13 @@ package gui;
 
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Iterator;
 
 
 import java.util.Iterator;
@@ -27,10 +29,12 @@ public class DecisionLetterPanel extends JPanel {
 	private Claim claim;
 	private JButton print= new JButton("Print");
 	private JButton refresh= new JButton("Refresh");
-	public DecisionLetterPanel()
+	private DashboardPanel dashboard;
+	public DecisionLetterPanel(DashboardPanel dashboardPanel)
 	{
 		checkLetter = new JButton("Check for letters");
 		add(checkLetter);
+		this.dashboard = dashboardPanel;
 
 		TheHandler handler= new TheHandler();
 		checkLetter.addActionListener(handler);
@@ -78,6 +82,8 @@ public class DecisionLetterPanel extends JPanel {
 		}
 	}
 
+	
+
 	public Claim exploreClaims() {
 		Claim claim;
 		Iterator<Claim> it = Claim.allClaimsList.iterator();
@@ -90,5 +96,7 @@ public class DecisionLetterPanel extends JPanel {
 		}
 		return null;
 	}
+
+
 }
 

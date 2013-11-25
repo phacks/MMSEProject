@@ -1,5 +1,6 @@
 package system;
 
+import gui.DashboardPanel;
 import gui.DecisionFrame;
 
 import javax.swing.JOptionPane;
@@ -7,8 +8,11 @@ import javax.swing.JOptionPane;
 
 public class ClaimRegistrationControl {
 
-	public ClaimRegistrationControl()
+	private DashboardPanel dashboard;
+	
+	public ClaimRegistrationControl(DashboardPanel dashboard)
 	{
+		this.dashboard = dashboard;
 	}
 	public void clientHandling(boolean h,boolean n,String price, String name, String surname, String comments, String estimatedDamages){
 		Client client;
@@ -28,6 +32,7 @@ public class ClaimRegistrationControl {
 			}
 
 			JOptionPane.showMessageDialog(null,"Claim registered"+" "+"for"+name+" " +surname);
+			dashboard.refreshNotifications();
 		}
 		else
 			createDecision(name,surname);
