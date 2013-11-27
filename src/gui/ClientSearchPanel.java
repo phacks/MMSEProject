@@ -30,19 +30,7 @@ public class ClientSearchPanel extends JPanel implements ActionListener {
 	private JButton searchAllClients = new JButton("Display all clients");
 
 	public ClientSearchPanel(){
-
-		// Creation of fake clients accounts, for the purpose of GUI tests
-		//		Client marion = new Client("Samama", "Marion");
-		//		new Claim(marion, "10000", "2000", "high");
-		//		new Claim(marion, "10000", "2000", "low");
-		//
-		//		Client celine = new Client("Samama", "Céline");
-		//		new Claim(celine, "10000", "2000", "normal");
-
-
-
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-
 		searchPanel.add(name);
 		searchPanel.add(surname);
 		searchPanel.add(submit);
@@ -52,17 +40,10 @@ public class ClientSearchPanel extends JPanel implements ActionListener {
 		searchAllClients.addActionListener(this);
 		searchPanel.add(searchAllClients);
 		this.add(searchPanel);
-
-		
-
 		resultsPanel.setLayout(new BoxLayout(resultsPanel, BoxLayout.PAGE_AXIS));
-
 		this.add(resultsPanel);
 	}
-
-	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
 		if(arg0.getSource() == submit){
 			resultsPanel.removeAll();
 			if (surname.getText().equals("")){
@@ -112,7 +93,7 @@ public class ClientSearchPanel extends JPanel implements ActionListener {
 			resultsPanel.repaint();
 			resultsPanel.revalidate();
 		}
-		
+
 		if(arg0.getSource() == searchAllClients){
 			resultsPanel.removeAll();
 			Iterator<Client> it = Client.allClientsList.iterator();
@@ -159,11 +140,7 @@ public class ClientSearchPanel extends JPanel implements ActionListener {
 	}
 
 	private JPanel createClaimPanel(Claim claim) {
-		// TODO Auto-generated method stub
 		JPanel claimPanel = new ClaimPanel(claim);
-
 		return claimPanel;
 	}
-
-
 }

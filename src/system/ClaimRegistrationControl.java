@@ -31,7 +31,7 @@ public class ClaimRegistrationControl {
 				Claim claim=new	Claim(client,price,estimatedDamages,"low");
 			}
 
-			JOptionPane.showMessageDialog(null,"Claim registered"+" "+"for"+name+" " +surname);
+			JOptionPane.showMessageDialog(null,"Claim registered"+" "+"for"+" "+name+" " +surname);
 			dashboard.refreshNotifications();
 		}
 		else

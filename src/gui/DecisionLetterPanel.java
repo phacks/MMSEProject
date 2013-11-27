@@ -35,7 +35,6 @@ public class DecisionLetterPanel extends JPanel {
 		checkLetter = new JButton("Check for letters");
 		add(checkLetter);
 		this.dashboard = dashboardPanel;
-
 		TheHandler handler= new TheHandler();
 		checkLetter.addActionListener(handler);
 		refresh.addActionListener(handler);
@@ -57,7 +56,7 @@ public class DecisionLetterPanel extends JPanel {
 			else	
 			{
 				JTextArea textArea = new JTextArea("Hello"+" " +claim.getClient().getName()+" " +claim.getClient().getSurname()  +"\n"
-						+"the decision about your claim have been" +claim.getDecision() 
+						+"the decision about your claim is"+" " +claim.getDecision() 
 						);
 				JScrollPane areaScrollPane = new JScrollPane(textArea);
 				areaScrollPane.setVerticalScrollBarPolicy(
@@ -78,6 +77,7 @@ public class DecisionLetterPanel extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 			claim.setLetterSent(true);
 			JOptionPane.showMessageDialog(null, "Letter sent");
+			dashboard.refreshNotifications();
 			refresh.doClick();
 		}
 	}
@@ -89,14 +89,12 @@ public class DecisionLetterPanel extends JPanel {
 		Iterator<Claim> it = Claim.allClaimsList.iterator();
 		while(it.hasNext()){
 			claim= it.next();
-			if( claim.isLetterSent() == false && claim.isProcessed() == false)
+			if( claim.isLetterSent() == false && claim.isProcessed() == true && claim.getDecision() != null)
 			{
 				return claim;
 			}
 		}
 		return null;
 	}
-
-
 }
 

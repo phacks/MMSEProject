@@ -5,43 +5,26 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Client {
-	
+
 	private String name;
 	private String surname;
 	private ArrayList<Claim> claimsList = new ArrayList<Claim>();
 	public static ArrayList<Client> allClientsList = new ArrayList<Client>();
 	public static int counter = 0;
 	private String insuranceType;
-	
-
-
-	
-
 
 	public Client(String name, String surname, String insuranceType) {
-		// TODO Auto-generated constructor stub
 		this.name = name;
 		this.surname = surname;
 		this.setInsuranceType(insuranceType);
 		allClientsList.add(this);
 	}
-
-
-
-
-
-
-
-
-
-	public void addClaim(Claim claim){ // I added static and removed this
+	public void addClaim(Claim claim){
 		claimsList.add(claim);
 	}
-	
 	public ArrayList<Claim> getClaimsList(){
 		return this.claimsList;
 	}
-	
 	public static ArrayList<Client> searchClient(String name){
 		Iterator<Client> it = allClientsList.iterator();
 		ArrayList<Client> clientsList = new ArrayList<Client>();
@@ -53,7 +36,7 @@ public class Client {
 		}
 		return clientsList;
 	}
-	
+
 	public static Client searchClient(String name, String surname){
 		Iterator<Client> it = allClientsList.iterator();
 		Client client;
@@ -65,39 +48,19 @@ public class Client {
 		}
 		return null;
 	}
-	
+
 	public String getSurname() {
-		// TODO Auto-generated method stub
 		return surname;
 	}
 
 	public String getName() {
-		// TODO Auto-generated method stub
 		return name;
 	}
-
-
-
-
-
-
-
-
-
 	public String getInsuranceType() {
 		return insuranceType;
 	}
-
-
-
-
-
-
-
-
-
 	public void setInsuranceType(String insuranceType) {
 		this.insuranceType = insuranceType;
 	}
-	
+
 }
